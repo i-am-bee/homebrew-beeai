@@ -5,15 +5,7 @@ class ArizePhoenix < Formula
   homepage "https://docs.arize.com/phoenix"
   url "https://files.pythonhosted.org/packages/24/d4/2b765ad22ea4fea36e3cd9e7e6e68aec7deec9cb2c150aa79a3664f7d85a/arize_phoenix-7.12.0.tar.gz"
   sha256 "f516da21f7950d2b77164a8b001f612e11ac6c365a9345f7f2c2852f8b102f9a"
-  license "ELv2"
-
-  depends_on "python@3.13"
-  
-  depends_on "apache-arrow"
-  depends_on "certifi"
-  depends_on "cryptography"
-  depends_on "numpy"
-  depends_on "scipy"
+  license "Elastic-2.0"
 
   depends_on "cmake" => :build
   depends_on "cython" => :build
@@ -24,6 +16,13 @@ class ArizePhoenix < Formula
   depends_on "ninja" => :build
   depends_on "python-setuptools" => :build
   depends_on "rust" => :build
+
+  depends_on "apache-arrow"
+  depends_on "certifi"
+  depends_on "cryptography"
+  depends_on "numpy"
+  depends_on "python@3.13"
+  depends_on "scipy"
 
   resource "aioitertools" do
     url "https://files.pythonhosted.org/packages/06/de/38491a84ab323b47c7f86e94d2830e748780525f7a10c8600b67ead7e9ea/aioitertools-0.12.0.tar.gz"
@@ -292,7 +291,7 @@ class ArizePhoenix < Formula
 
   resource "sqlean-py" do
     # source dist is broken on PyPI -- the external SQLite sources are missing -- need to download and build from Git
-    url "https://github.com/nalgeon/sqlean.py/archive/refs/tags/3.47.0.zip"
+    url "https://github.com/nalgeon/sqlean.py/archive/refs/tags/3.47.0.tar.gz"
     sha256 "dec85746a61d51e695cf32f1952f3184526691e32fb2be86d844bff2fa7407c0"
   end
 
@@ -371,7 +370,7 @@ class ArizePhoenix < Formula
   end
 
   service do
-    run [bin/"phoenix", "serve"]
+    run [opt_bin/"phoenix", "serve"]
     keep_alive true
     error_log_path var/"log/phoenix.log"
     log_path var/"log/phoenix.log"
