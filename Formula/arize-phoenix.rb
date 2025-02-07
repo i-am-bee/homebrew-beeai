@@ -370,6 +370,14 @@ class ArizePhoenix < Formula
     venv.pip_install_and_link buildpath
   end
 
+  service do
+    run [bin/"phoenix", "serve"]
+    keep_alive true
+    error_log_path var/"log/phoenix.log"
+    log_path var/"log/phoenix.log"
+    working_dir var
+  end
+
   test do
     system bin/"phoenix", "--help"
   end
