@@ -292,7 +292,7 @@ class ArizePhoenix < Formula
   resource "sqlean-py" do
     # source dist is broken on PyPI -- the external SQLite sources are missing -- need to download and build from Git
     url "https://github.com/nalgeon/sqlean.py/archive/refs/tags/3.47.0.tar.gz"
-    sha256 "dec85746a61d51e695cf32f1952f3184526691e32fb2be86d844bff2fa7407c0"
+    sha256 "d850488ba72a79ffa2c9c4651b78e2871d260c7c63f72f731011786a0a6feac2"
   end
 
   resource "starlette" do
