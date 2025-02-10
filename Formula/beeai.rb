@@ -3,8 +3,8 @@ class Beeai < Formula
 
   desc "Command-line interface and server for the BeeAI platform"
   homepage "https://github.com/i-am-bee/bee-agent-framework"
-  url "https://files.pythonhosted.org/packages/82/c9/b5cce477ee84567b7e88b1475279ff99bd18f28cf37e71a562b94eabf880/beeai_cli-0.0.1.tar.gz"
-  sha256 "380729e17bea3a8253779b6adfc902e9920e07cfa26924677dca9d983e90e78e"
+  url "https://files.pythonhosted.org/packages/80/03/04449946ffb6d799ed48f2b75b075b2a6b70869009a8f731d94e6ac53b95/beeai_cli-0.0.2.tar.gz"
+  sha256 "88b90f12807d74f92769e3d17dd09cf69f8f7bd0589abb08c219ee107c962d79"
   license "Apache-2.0"
 
   depends_on "rust" => :build
@@ -306,7 +306,7 @@ class Beeai < Formula
   end
 
   service do
-    run [opt_bin/"beeai", "server", "serve"]
+    run [opt_bin/"beeai", "serve"]
     keep_alive true
     error_log_path var/"log/beeai-server.log"
     log_path var/"log/beeai-server.log"
@@ -314,6 +314,6 @@ class Beeai < Formula
   end
 
   test do
-    system bin/"beeai", "help"
+    system bin/"beeai", "--help"
   end
 end
