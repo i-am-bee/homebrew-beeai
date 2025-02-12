@@ -16,7 +16,6 @@ class Beeai < Formula
 
   depends_on "rust" => :build
 
-  depends_on "arize-phoenix"
   depends_on "certifi"
   depends_on "libyaml"
   depends_on "pygments"
