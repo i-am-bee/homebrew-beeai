@@ -3,17 +3,9 @@ class ArizePhoenix < Formula
 
   desc "AI Observability & Evaluation"
   homepage "https://docs.arize.com/phoenix"
-  url "https://files.pythonhosted.org/packages/24/d4/2b765ad22ea4fea36e3cd9e7e6e68aec7deec9cb2c150aa79a3664f7d85a/arize_phoenix-7.12.0.tar.gz"
-  sha256 "f516da21f7950d2b77164a8b001f612e11ac6c365a9345f7f2c2852f8b102f9a"
+  url "https://files.pythonhosted.org/packages/e6/2c/405035cb85c10b17f55848e01bd64b2dd98d491a097612b0b7e6176d0151/arize_phoenix-8.3.0.tar.gz"
+  sha256 "73c28d2c65c502a2dea783bb21fa9496b2f8da701e9f31f04891a42dbc3afb9f"
   license "Elastic-2.0"
-
-  bottle do
-    root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/arize-phoenix-7.12.0"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_sequoia: "b04007025043cc10a54af6d413bb6ba7c1553767ac2625740f87d4c57dc575f0"
-    sha256 cellar: :any,                 ventura:       "8a7137c6cb310a8dd2b815e4b514fe45bc76e2f6408bc616aca115be1e9a08ed"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "4d50b2a52059b5996822dd2e133a788ff2871995aba301e538988c8f54c2d838"
-  end
 
   depends_on "cmake" => :build
   depends_on "cython" => :build
@@ -57,24 +49,29 @@ class ArizePhoenix < Formula
     sha256 "1d9fe889df5212298c0c0723fa20479d1b94883a2df44bd3897aa91083316f7a"
   end
 
+  resource "arize-phoenix-client" do
+    url "https://files.pythonhosted.org/packages/34/c7/a812c33ecbb8a56a11fc278cb38b180d849ae271258bc18f024fd97d330e/arize_phoenix_client-1.0.2.tar.gz"
+    sha256 "aab63ea1d4e01644eebdfed79b8ce2a8f42e55c5e9c1630f538bae626c47db11"
+  end
+
   resource "arize-phoenix-evals" do
-    url "https://files.pythonhosted.org/packages/3e/bb/8e304043f0a12e6e40de668b04f1e42dcb993984b63e42225bf30668edd3/arize_phoenix_evals-0.20.1.tar.gz"
-    sha256 "e7e324bb87a484c4a1684b999b44e6a60c64df11fa224a6797af82ac4df27dcf"
+    url "https://files.pythonhosted.org/packages/c0/a9/7753f95d600271c7c33ad101b1e330bf211d221f3ae9828b834c86310032/arize_phoenix_evals-0.20.3.tar.gz"
+    sha256 "32ba364fda62a0dd0bb4e4f1bbeab9a62d2b111f5e0c229a6449a49445892a3c"
   end
 
   resource "arize-phoenix-otel" do
-    url "https://files.pythonhosted.org/packages/62/00/a7cbb55608d224275a0db244f5fde7b06ac645a6dafcf6378bf554dcd7a5/arize_phoenix_otel-0.7.1.tar.gz"
-    sha256 "0154745da500c3f1402f8d280101ce6084c717444b120921288a316ecf29b7a8"
+    url "https://files.pythonhosted.org/packages/c6/80/34171b7e0aa767c95ef54f29d18d057c62bfd059626ec4b4d697e3c706ed/arize_phoenix_otel-0.8.0.tar.gz"
+    sha256 "fb3213a1dcb038fe835517b597c49f164f6b3f758b73fe697d957b12b0a4556a"
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/58/73/0aa3d68b1c3caeac01ae0bad7a3d2a23029c4a3b42c7ccb89d752ed67eb2/authlib-1.4.1.tar.gz"
-    sha256 "30ead9ea4993cdbab821dc6e01e818362f92da290c04c7f6a1940f86507a790d"
+    url "https://files.pythonhosted.org/packages/e7/66/e8e55b338cb6c3bbab448821fefa52687b67aec0660277676b0b4e645497/authlib-1.5.0.tar.gz"
+    sha256 "8fd8bd8f806485a532ac39a17b579982cf54688f956174f995cc938a91725423"
   end
 
   resource "cachetools" do
-    url "https://files.pythonhosted.org/packages/d9/74/57df1ab0ce6bc5f6fa868e08de20df8ac58f9c44330c7671ad922d2bbeae/cachetools-5.5.1.tar.gz"
-    sha256 "70f238fbba50383ef62e55c6aff6d9673175fe59f7c6782c7a0b9e38f4a9df95"
+    url "https://files.pythonhosted.org/packages/6c/81/3747dad6b14fa2cf53fcf10548cf5aea6913e96fab41a3c198676f8948a5/cachetools-5.5.2.tar.gz"
+    sha256 "1a661caa9175d26759571b2e19580f9d6393969e5dfca11fdb1f947a23e640d4"
   end
 
   resource "cffi" do
@@ -103,8 +100,8 @@ class ArizePhoenix < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/ff/a7/8e9cccdb1c49870de6faea2a2764fa23f627dd290633103540209f03524c/googleapis_common_protos-1.66.0.tar.gz"
-    sha256 "c3e7b33d15fdca5374cc0a7346dd92ffa847425cc4ea941d970f13680052ec8c"
+    url "https://files.pythonhosted.org/packages/54/d2/c08f0d9f94b45faca68e355771329cba2411c777c8713924dd1baee0e09c/googleapis_common_protos-1.68.0.tar.gz"
+    sha256 "95d38161f4f9af0d9423eed8fb7b64ffd2568c3464eb542ff02c5bfa1953ab3c"
   end
 
   resource "graphql-core" do
@@ -233,13 +230,13 @@ class ArizePhoenix < Formula
   end
 
   resource "psutil" do
-    url "https://files.pythonhosted.org/packages/1f/5a/07871137bb752428aa4b659f910b399ba6f291156bdea939be3e96cae7cb/psutil-6.1.1.tar.gz"
-    sha256 "cf8496728c18f2d0b45198f06895be52f36611711746b7f30c464b422b50e2f5"
+    url "https://files.pythonhosted.org/packages/2a/80/336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3de/psutil-7.0.0.tar.gz"
+    sha256 "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
   end
 
   resource "pyarrow" do
-    url "https://files.pythonhosted.org/packages/7b/01/fe1fd04744c2aa038e5a11c7a4adb3d62bce09798695e54f7274b5977134/pyarrow-19.0.0.tar.gz"
-    sha256 "8d47c691765cf497aaeed4954d226568563f1b3b74ff61139f2d77876717084b"
+    url "https://files.pythonhosted.org/packages/7f/09/a9046344212690f0632b9c709f9bf18506522feb333c894d0de81d62341a/pyarrow-19.0.1.tar.gz"
+    sha256 "3bf266b485df66a400f282ac0b6d1b500b9d2ae73314a153dbe97d6d5cc8a99e"
   end
 
   resource "pycparser" do
@@ -293,8 +290,8 @@ class ArizePhoenix < Formula
   end
 
   resource "sqlalchemy" do
-    url "https://files.pythonhosted.org/packages/3b/20/93ea2518df4d7a14ebe9ace9ab8bb92aaf7df0072b9007644de74172b06c/sqlalchemy-2.0.37.tar.gz"
-    sha256 "12b28d99a9c14eaf4055810df1001557176716de0167b91026e648e65229bffb"
+    url "https://files.pythonhosted.org/packages/e4/08/9a90962ea72acd532bda71249a626344d855c4032603924b1b547694b837/sqlalchemy-2.0.38.tar.gz"
+    sha256 "e5a4d82bdb4bf1ac1285a68eab02d253ab73355d9f0fe725a97e1e0fa689decb"
   end
 
   resource "sqlean-py" do
@@ -344,8 +341,8 @@ class ArizePhoenix < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/94/54/8359678c726243d19fae38ca14a334e740782336c9f19700858c4eb64a1e/websockets-14.2.tar.gz"
-    sha256 "5059ed9c54945efb321f097084b4c7e52c246f2c869815876a69d1efc4ad6eb5"
+    url "https://files.pythonhosted.org/packages/2e/7a/8bc4d15af7ff30f7ba34f9a172063bfcee9f5001d7cef04bee800a658f33/websockets-15.0.tar.gz"
+    sha256 "ca36151289a15b39d8d683fd8b7abbe26fc50be311066c5f8dcf3cb8cee107ab"
   end
 
   resource "wrapt" do
