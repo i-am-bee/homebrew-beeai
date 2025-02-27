@@ -7,6 +7,13 @@ class ArizePhoenix < Formula
   sha256 "73c28d2c65c502a2dea783bb21fa9496b2f8da701e9f31f04891a42dbc3afb9f"
   license "Elastic-2.0"
 
+  bottle do
+    root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/arize-phoenix-8.3.0"
+    sha256 cellar: :any,                 arm64_sequoia: "d0592a9ef809050b4043dc872c8b3a419be4b01359b23ab61846c01f3421e72e"
+    sha256 cellar: :any,                 ventura:       "b0460fc5893e2c9b3fba21c10384a7839a4e7810063670906335eae403b27b5b"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "256e46a87b23a47da15fe49b651b4e28fd1d032e47b2cdcbc7e263719358f595"
+  end
+
   depends_on "cmake" => :build
   depends_on "cython" => :build
   depends_on "llvm" => :build
