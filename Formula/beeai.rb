@@ -18,9 +18,11 @@ class Beeai < Formula
 
   depends_on "certifi"
   depends_on "libyaml"
+  depends_on "node"
   depends_on "pygments"
   depends_on "python-setuptools"
   depends_on "python@3.13"
+  depends_on "uv"
 
   resource "acp-sdk" do
     url "https://files.pythonhosted.org/packages/5a/b5/c570656f99c429148afc3d092809c2130ac0fc1e3b4efb331bf31ac7fa7d/acp_sdk-0.0.3.tar.gz"
@@ -387,6 +389,7 @@ class Beeai < Formula
     error_log_path var/"log/beeai-server.log"
     log_path var/"log/beeai-server.log"
     working_dir var
+    environment_variables PATH: std_service_path_env
   end
 
   test do
