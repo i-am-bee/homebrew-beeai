@@ -19,6 +19,7 @@ class Beeai < Formula
   depends_on "certifi"
   depends_on "libyaml"
   depends_on "node"
+  depends_on "otelcol-contrib"
   depends_on "pygments"
   depends_on "python-setuptools"
   depends_on "python@3.13"
