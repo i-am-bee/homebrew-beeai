@@ -2,17 +2,10 @@ class Beeai < Formula
   include Language::Python::Virtualenv
 
   desc "Command-line interface and server for the BeeAI platform"
-  homepage "https://github.com/i-am-bee/bee-agent-framework"
+  homepage "https://github.com/i-am-bee/beeai"
   url "https://files.pythonhosted.org/packages/f1/4e/bde7fb449871b25db27a2ee88d682c1032e9630051870678be82c0de09a5/beeai_cli-0.0.3.tar.gz"
   sha256 "eec46f9a7720e57276e936addec05aebebc6344ee070f9ae58cd92f724b93a7c"
   license "Apache-2.0"
-
-  bottle do
-    root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/beeai-0.0.3"
-    sha256 cellar: :any,                 arm64_sequoia: "097b7d28c5a5312063200cde6a19bd2565f9539e96f3fd56822f3deb564c27b8"
-    sha256 cellar: :any,                 ventura:       "9ad623b7d3de8ccf185567b64a0f1da33ba3d1095c9b92ffcbef914f35f280ce"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "af11cbb03582f1b61320dcba05a7034a956ed7e9df3fc9e639dcd0c12a2eb2ac"
-  end
 
   depends_on "rust" => :build
 
@@ -31,8 +24,8 @@ class Beeai < Formula
   end
 
   resource "aiohappyeyeballs" do
-    url "https://files.pythonhosted.org/packages/08/07/508f9ebba367fc3370162e53a3cfd12f5652ad79f0e0bfdf9f9847c6f159/aiohappyeyeballs-2.4.6.tar.gz"
-    sha256 "9b05052f9042985d32ecbe4b59a77ae19c006a78f1344d7fdad69d28ded3d0b0"
+    url "https://files.pythonhosted.org/packages/de/7c/79a15272e88d2563c9d63599fa59f05778975f35b255bf8f90c8b12b4ada/aiohappyeyeballs-2.4.8.tar.gz"
+    sha256 "19728772cb12263077982d2f55453babd8bec6a052a926cd5c0c42796da8bf62"
   end
 
   resource "aiohttp" do
@@ -111,8 +104,8 @@ class Beeai < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/a2/b2/5a5dc4affdb6661dea100324e19a7721d5dc524b464fe8e366c093fd7d87/fastapi-0.115.8.tar.gz"
-    sha256 "0ce9111231720190473e222cdf0f07f7206ad7e53ea02beb1d2dc36e2f0741e9"
+    url "https://files.pythonhosted.org/packages/b5/28/c5d26e5860df807241909a961a37d45e10533acef95fc368066c7dd186cd/fastapi-0.115.11.tar.gz"
+    sha256 "cc81f03f688678b92600a65a5e618b93592c65005db37157147204d8924bf94f"
   end
 
   resource "fastapi-cli" do
@@ -126,8 +119,8 @@ class Beeai < Formula
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/54/d2/c08f0d9f94b45faca68e355771329cba2411c777c8713924dd1baee0e09c/googleapis_common_protos-1.68.0.tar.gz"
-    sha256 "95d38161f4f9af0d9423eed8fb7b64ffd2568c3464eb542ff02c5bfa1953ab3c"
+    url "https://files.pythonhosted.org/packages/c2/92/6bb11dad062ad7cc40665d0a8986193d54f1a0032b510e84e7182df9e661/googleapis_common_protos-1.69.0.tar.gz"
+    sha256 "5a46d58af72846f59009b9c4710425b9af2139555c71837081706b213b298187"
   end
 
   resource "h11" do
@@ -321,8 +314,8 @@ class Beeai < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/ff/fb/2984a686808b89a6781526129a4b51266f678b2d2b97ab2d325e56116df8/starlette-0.45.3.tar.gz"
-    sha256 "2cbcba2a75806f8a41c722141486f37c28e30a0921c5f6fe4346cb0dcee1302f"
+    url "https://files.pythonhosted.org/packages/44/b6/fb9a32e3c5d59b1e383c357534c63c2d3caa6f25bf3c59dd89d296ecbaec/starlette-0.46.0.tar.gz"
+    sha256 "b359e4567456b28d473d0193f34c0de0ed49710d75ef183a74a5ce0499324f50"
   end
 
   resource "structlog" do
@@ -331,8 +324,8 @@ class Beeai < Formula
   end
 
   resource "typer" do
-    url "https://files.pythonhosted.org/packages/cb/ce/dca7b219718afd37a0068f4f2530a727c2b74a8b6e8e0c0080a4c0de4fcd/typer-0.15.1.tar.gz"
-    sha256 "a0588c0a7fa68a1978a069818657778f86abe6ff5ea6abf472f940a08bfe4f0a"
+    url "https://files.pythonhosted.org/packages/8b/6f/3991f0f1c7fcb2df31aef28e0594d8d54b05393a0e4e34c65e475c2a5d41/typer-0.15.2.tar.gz"
+    sha256 "ab2fab47533a813c49fe1f16b1a370fd5819099c00b119e0633df65f22144ba5"
   end
 
   resource "typing-extensions" do
