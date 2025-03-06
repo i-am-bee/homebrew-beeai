@@ -3,16 +3,9 @@ class ArizePhoenix < Formula
 
   desc "AI Observability & Evaluation"
   homepage "https://docs.arize.com/phoenix"
-  url "https://files.pythonhosted.org/packages/e6/2c/405035cb85c10b17f55848e01bd64b2dd98d491a097612b0b7e6176d0151/arize_phoenix-8.3.0.tar.gz"
-  sha256 "73c28d2c65c502a2dea783bb21fa9496b2f8da701e9f31f04891a42dbc3afb9f"
+  url "https://files.pythonhosted.org/packages/a7/d0/6befe3c390602aa9c4980b8b58f8b5ffa34c4fa1b06b4ceb4316089f4bda/arize_phoenix-8.9.0.tar.gz"
+  sha256 "b6eff8337bd492f779785724acd98f62cf0743dfd2ce6f900b4b112531287798"
   license "Elastic-2.0"
-
-  bottle do
-    root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/arize-phoenix-8.3.0"
-    sha256 cellar: :any,                 arm64_sequoia: "d0592a9ef809050b4043dc872c8b3a419be4b01359b23ab61846c01f3421e72e"
-    sha256 cellar: :any,                 ventura:       "b0460fc5893e2c9b3fba21c10384a7839a4e7810063670906335eae403b27b5b"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "256e46a87b23a47da15fe49b651b4e28fd1d032e47b2cdcbc7e263719358f595"
-  end
 
   depends_on "cmake" => :build
   depends_on "cython" => :build
@@ -26,10 +19,12 @@ class ArizePhoenix < Formula
 
   depends_on "apache-arrow"
   depends_on "certifi"
+  depends_on "cffi"
   depends_on "cryptography"
   depends_on "numpy"
   depends_on "python@3.13"
   depends_on "scipy"
+  depends_on "six"
 
   resource "aioitertools" do
     url "https://files.pythonhosted.org/packages/06/de/38491a84ab323b47c7f86e94d2830e748780525f7a10c8600b67ead7e9ea/aioitertools-0.12.0.tar.gz"
@@ -42,8 +37,8 @@ class ArizePhoenix < Formula
   end
 
   resource "alembic" do
-    url "https://files.pythonhosted.org/packages/99/09/f844822e4e847a3f0bd41797f93c4674cd4d2462a3f6c459aa528cdf786e/alembic-1.14.1.tar.gz"
-    sha256 "496e888245a53adf1498fcab31713a469c65836f8de76e01399aa1c3e90dd213"
+    url "https://files.pythonhosted.org/packages/4a/ed/901044acb892caa5604bf818d2da9ab0df94ef606c6059fdf367894ebf60/alembic-1.15.1.tar.gz"
+    sha256 "e1a1c738577bca1f27e68728c910cd389b9a92152ff91d902da649c192e30c49"
   end
 
   resource "annotated-types" do
@@ -57,8 +52,8 @@ class ArizePhoenix < Formula
   end
 
   resource "arize-phoenix-client" do
-    url "https://files.pythonhosted.org/packages/34/c7/a812c33ecbb8a56a11fc278cb38b180d849ae271258bc18f024fd97d330e/arize_phoenix_client-1.0.2.tar.gz"
-    sha256 "aab63ea1d4e01644eebdfed79b8ce2a8f42e55c5e9c1630f538bae626c47db11"
+    url "https://files.pythonhosted.org/packages/f9/1d/ed50c40aaae97a9a2c58f95450effe617056dd456b27d39663a8233c2083/arize_phoenix_client-1.0.3.tar.gz"
+    sha256 "4fd6766641803acea58abf3e2eb36cac6753f10b00b11736a0ed7c12cf07acfb"
   end
 
   resource "arize-phoenix-evals" do
@@ -72,8 +67,8 @@ class ArizePhoenix < Formula
   end
 
   resource "authlib" do
-    url "https://files.pythonhosted.org/packages/e7/66/e8e55b338cb6c3bbab448821fefa52687b67aec0660277676b0b4e645497/authlib-1.5.0.tar.gz"
-    sha256 "8fd8bd8f806485a532ac39a17b579982cf54688f956174f995cc938a91725423"
+    url "https://files.pythonhosted.org/packages/36/aa/e1c199d27ea06a13f9641746a9b19f15bd75b04b40b6bd72a89156c75d10/authlib-1.5.1.tar.gz"
+    sha256 "5cbc85ecb0667312c1cdc2f9095680bb735883b123fb509fde1e65b1c5df972e"
   end
 
   resource "cachetools" do
@@ -81,9 +76,9 @@ class ArizePhoenix < Formula
     sha256 "1a661caa9175d26759571b2e19580f9d6393969e5dfca11fdb1f947a23e640d4"
   end
 
-  resource "cffi" do
-    url "https://files.pythonhosted.org/packages/fc/97/c783634659c2920c3fc70419e3af40972dbaf758daa229a7d6ea6135c90d/cffi-1.17.1.tar.gz"
-    sha256 "1c39c6016c32bc48dd54561950ebd6836e1670f2ae46128f67cf49e789c52824"
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/1c/ab/c9f1e32b7b1bf505bf26f0ef697775960db7932abeb7b516de930ba2705f/certifi-2025.1.31.tar.gz"
+    sha256 "3d5da6925056f6f18f119200434a4780a94263f10d1c21d032a6f6b2baa20651"
   end
 
   resource "charset-normalizer" do
@@ -102,13 +97,13 @@ class ArizePhoenix < Formula
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/a2/b2/5a5dc4affdb6661dea100324e19a7721d5dc524b464fe8e366c093fd7d87/fastapi-0.115.8.tar.gz"
-    sha256 "0ce9111231720190473e222cdf0f07f7206ad7e53ea02beb1d2dc36e2f0741e9"
+    url "https://files.pythonhosted.org/packages/b5/28/c5d26e5860df807241909a961a37d45e10533acef95fc368066c7dd186cd/fastapi-0.115.11.tar.gz"
+    sha256 "cc81f03f688678b92600a65a5e618b93592c65005db37157147204d8924bf94f"
   end
 
   resource "googleapis-common-protos" do
-    url "https://files.pythonhosted.org/packages/54/d2/c08f0d9f94b45faca68e355771329cba2411c777c8713924dd1baee0e09c/googleapis_common_protos-1.68.0.tar.gz"
-    sha256 "95d38161f4f9af0d9423eed8fb7b64ffd2568c3464eb542ff02c5bfa1953ab3c"
+    url "https://files.pythonhosted.org/packages/c2/92/6bb11dad062ad7cc40665d0a8986193d54f1a0032b510e84e7182df9e661/googleapis_common_protos-1.69.0.tar.gz"
+    sha256 "5a46d58af72846f59009b9c4710425b9af2139555c71837081706b213b298187"
   end
 
   resource "graphql-core" do
@@ -157,8 +152,8 @@ class ArizePhoenix < Formula
   end
 
   resource "jinja2" do
-    url "https://files.pythonhosted.org/packages/af/92/b3130cbbf5591acf9ade8708c365f3238046ac7cb8ccba6e81abccb0ccff/jinja2-3.1.5.tar.gz"
-    sha256 "8fefff8dc3034e27bb80d67c671eb8a9bc424c0ef4c0826edbff304cceff43bb"
+    url "https://files.pythonhosted.org/packages/df/bf/f7da0350254c0ed7c72f3e33cef02e048281fec7ecec5f032d4aac52226b/jinja2-3.1.6.tar.gz"
+    sha256 "0137fb05990d35f1275a587e9aee6d56da821fc83491a0fb838183be43f66d6d"
   end
 
   resource "joblib" do
@@ -177,8 +172,8 @@ class ArizePhoenix < Formula
   end
 
   resource "openinference-instrumentation" do
-    url "https://files.pythonhosted.org/packages/78/fd/817518595428c546cd1df50bc2d49428d094573578ca65de31a4d40f5242/openinference_instrumentation-0.1.22.tar.gz"
-    sha256 "9d45ad541b8155ab48318335f9649c654e447240f3bd8890dc98f2fec1d66d4b"
+    url "https://files.pythonhosted.org/packages/85/77/4c00ee61e20f5b9f18c7aebba03a0afef5e3a6a5fa891e5d5fc1d625212c/openinference_instrumentation-0.1.23.tar.gz"
+    sha256 "18b97a7cdb4a18e7c8990ca5eeaac15dac0978f888731cb30e5997cd6a791823"
   end
 
   resource "openinference-semantic-conventions" do
@@ -286,11 +281,6 @@ class ArizePhoenix < Formula
     sha256 "b4fc2525eca2c69a59260f583c56a7557c6ccdf8deafdba6e060f94c1c59738e"
   end
 
-  resource "six" do
-    url "https://files.pythonhosted.org/packages/94/e7/b2c673351809dca68a0e064b6af791aa332cf192da575fd474ed7d6f16a2/six-1.17.0.tar.gz"
-    sha256 "ff70335d468e7eb6ec65b95b99d3a2836546063f63acc5171de367e834932a81"
-  end
-
   resource "sniffio" do
     url "https://files.pythonhosted.org/packages/a2/87/a6771e1546d97e7e041b6ae58d80074f81b7d5121207425c964ddf5cfdbd/sniffio-1.3.1.tar.gz"
     sha256 "f4324edc670a0f49750a81b895f35c3adb843cca46f0530f79fc1babb23789dc"
@@ -308,8 +298,8 @@ class ArizePhoenix < Formula
   end
 
   resource "starlette" do
-    url "https://files.pythonhosted.org/packages/ff/fb/2984a686808b89a6781526129a4b51266f678b2d2b97ab2d325e56116df8/starlette-0.45.3.tar.gz"
-    sha256 "2cbcba2a75806f8a41c722141486f37c28e30a0921c5f6fe4346cb0dcee1302f"
+    url "https://files.pythonhosted.org/packages/44/b6/fb9a32e3c5d59b1e383c357534c63c2d3caa6f25bf3c59dd89d296ecbaec/starlette-0.46.0.tar.gz"
+    sha256 "b359e4567456b28d473d0193f34c0de0ed49710d75ef183a74a5ce0499324f50"
   end
 
   resource "strawberry-graphql" do
@@ -348,8 +338,8 @@ class ArizePhoenix < Formula
   end
 
   resource "websockets" do
-    url "https://files.pythonhosted.org/packages/2e/7a/8bc4d15af7ff30f7ba34f9a172063bfcee9f5001d7cef04bee800a658f33/websockets-15.0.tar.gz"
-    sha256 "ca36151289a15b39d8d683fd8b7abbe26fc50be311066c5f8dcf3cb8cee107ab"
+    url "https://files.pythonhosted.org/packages/21/e6/26d09fab466b7ca9c7737474c52be4f76a40301b08362eb2dbc19dcc16c1/websockets-15.0.1.tar.gz"
+    sha256 "82544de02076bafba038ce055ee6412d68da13ab47f0c60cab827346de828dee"
   end
 
   resource "wrapt" do
@@ -387,6 +377,7 @@ class ArizePhoenix < Formula
     error_log_path var/"log/phoenix.log"
     log_path var/"log/phoenix.log"
     working_dir var
+    environment_variables PHOENIX_GRPC_PORT: "8336"
   end
 
   test do
