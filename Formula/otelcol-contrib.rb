@@ -7,12 +7,11 @@ class OtelcolContrib < Formula
 
   bottle do
     root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/otelcol-contrib-0.120.0"
-    sha256 cellar: :any_skip_relocation, arm64_ventura: "0000000000000000000000000000000000000000000000000000000000000000"
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "0000000000000000000000000000000000000000000000000000000000000000"
-    sha256 cellar: :any_skip_relocation, arm64_sequioa: "0000000000000000000000000000000000000000000000000000000000000000"
-    sha256 cellar: :any_skip_relocation, ventura:       "0000000000000000000000000000000000000000000000000000000000000000"
-    sha256 cellar: :any_skip_relocation, sonoma:        "0000000000000000000000000000000000000000000000000000000000000000"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0000000000000000000000000000000000000000000000000000000000000000"
+    rebuild 1
+    sha256 cellar: :any_skip_relocation, arm64_sequoia: "2626411d937410d43a0d57ee30c8e9a64d661548dfc81bd574c0b344e551f2a6"
+    sha256 cellar: :any_skip_relocation, arm64_sonoma:  "7fb237e525c59b8451ea66cdc192f04bdcd2f93a3b4c925797e6a8af2fbf2d61"
+    sha256 cellar: :any_skip_relocation, ventura:       "0037b46621ef9c535b88ebeb56cf7a3280ed06f7d6b8341ff69484de46fb8759"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "102f04ea84a645bc242ca887e28f7ad2d4a473dd4b8bd9c030b4c0b058aeeea3"
   end
 
   depends_on "go" => :build
