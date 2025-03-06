@@ -1,0 +1,6 @@
+{
+  "beeai": {
+    "exclude_packages": ["certifi", "gnureadline", "setuptools"],
+    "extra_packages": []
+  }
+}
