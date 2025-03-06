@@ -9,13 +9,11 @@ class Beeai < Formula
 
   bottle do
     root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/beeai-0.0.3"
-    rebuild 1
-    sha256 cellar: :any,                 arm64_ventura: "0000000000000000000000000000000000000000000000000000000000000000"
-    sha256 cellar: :any,                 arm64_sonoma:  "0000000000000000000000000000000000000000000000000000000000000000"
-    sha256 cellar: :any,                 arm64_sequioa: "0000000000000000000000000000000000000000000000000000000000000000"
-    sha256 cellar: :any,                 ventura:       "0000000000000000000000000000000000000000000000000000000000000000"
-    sha256 cellar: :any,                 sonoma:        "0000000000000000000000000000000000000000000000000000000000000000"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0000000000000000000000000000000000000000000000000000000000000000"
+    rebuild 2
+    sha256 cellar: :any,                 arm64_sequoia: "2c7bc87818f228a383c74d5e2c7a756acced002fe247b7df2ef1defaec65fd3d"
+    sha256 cellar: :any,                 arm64_sonoma:  "cf8c6492fc7ce6a5750ceab9ac76561ce3e3ec3bf694531cd2fdbd7e8728b530"
+    sha256 cellar: :any,                 ventura:       "6499ff6baaf01a45bddaec0909b2648b35db4220417adbfbabd7628e2b601b12"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "441f8f0499e91c5c29635e9ee50cfb1214166db1023398a9a839241f426f723e"
   end
 
   depends_on "rust" => :build
