@@ -1,6 +1,8 @@
 {
   "beeai": {
-    "exclude_packages": ["certifi", "gnureadline", "setuptools"],
-    "extra_packages": []
+    "exclude_packages": ["certifi", "gnureadline", "setuptools"]
+  },
+  "arize-phoenix": {
+    "exclude_packages": ["certifi", "cffi", "cryptography", "numpy", "scipy", "six"]
   }
 }
