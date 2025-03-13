@@ -21,7 +21,6 @@ class Beeai < Formula
   depends_on "libyaml"
   depends_on "node"
   depends_on "otelcol-contrib"
-  depends_on "pygments"
   depends_on "python-setuptools"
   depends_on "python@3.13"
   depends_on "readline"
@@ -305,6 +304,11 @@ class Beeai < Formula
   resource "pydantic-settings" do
     url "https://files.pythonhosted.org/packages/88/82/c79424d7d8c29b994fb01d277da57b0a9b09cc03c3ff875f9bd8a86b2145/pydantic_settings-2.8.1.tar.gz"
     sha256 "d5c663dfbe9db9d5e1c646b2e161da12f0d734d422ee56f567d0ea2cee4e8585"
+  end
+
+  resource "pygments" do
+    url "https://files.pythonhosted.org/packages/7c/2d/c3338d48ea6cc0feb8446d8e6937e1408088a72a39937982cc6111d17f84/pygments-2.19.1.tar.gz"
+    sha256 "61c16d2a8576dc0649d9f39e089b5f02bcd27fba10d8fb4dcc28173f7a45151f"
   end
 
   resource "python-dotenv" do
