@@ -456,7 +456,7 @@ class Beeai < Formula
     error_log_path var/"log/beeai-server.log"
     log_path var/"log/beeai-server.log"
     working_dir var
-    environment_variables PATH: std_service_path_env
+    environment_variables PATH: "#{Formula["node"].opt_bin}:#{Formula["uv"].opt_bin}:#{std_service_path_env}"
   end
 
   test do
