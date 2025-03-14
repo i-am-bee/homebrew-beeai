@@ -8,11 +8,11 @@ class Beeai < Formula
   license "Apache-2.0"
 
   bottle do
-    root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/beeai-0.0.5"
-    sha256 cellar: :any,                 arm64_sequoia: "a63ce7d6f2f80ced33f2757a51fd4b33e7b15a5183d0b19798b76c599fc82a4f"
-    sha256 cellar: :any,                 arm64_sonoma:  "c15627fd08469856f5b740928cde947cddf79154b272e989686406e3a63cfe1f"
-    sha256 cellar: :any,                 ventura:       "44e148e856a4e1c14a27e80721acfe5e8e1d6f2ed3a479f7171c162d63ec0621"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "0b8aebf3378871a86a5f0d1569cd818565abb6734953b971415215e62e0fcf48"
+    root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/beeai-0.0.6"
+    sha256 cellar: :any,                 arm64_sequoia: "91c1c14e00c40258515c0acff5977ead8a1b4ff88cd2a006c8f758bfb2e06e47"
+    sha256 cellar: :any,                 arm64_sonoma:  "0c63642f103e88718d2e14a1ba04a780527eda6d97c9e632685292f999a00ae1"
+    sha256 cellar: :any,                 ventura:       "ccedcf9d548d120a60ff9b2645b5ee5b1bc6e70b7cd0eb2ba260f69287f5d090"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "1b5276717b78e767064a3d2668471911ba2013c1ea64db2b6db2919b9332da6f"
   end
 
   depends_on "rust" => :build
