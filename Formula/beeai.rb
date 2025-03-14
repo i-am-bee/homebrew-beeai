@@ -19,7 +19,7 @@ class Beeai < Formula
 
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "node"
+  depends_on "node@22"
   depends_on "otelcol-contrib"
   depends_on "python-setuptools"
   depends_on "python@3.13"
@@ -456,7 +456,7 @@ class Beeai < Formula
     error_log_path var/"log/beeai-server.log"
     log_path var/"log/beeai-server.log"
     working_dir var
-    environment_variables PATH: std_service_path_env
+    environment_variables PATH: "#{Formula["node@22"].opt_bin}:#{Formula["uv"].opt_bin}:#{std_service_path_env}"
   end
 
   test do
