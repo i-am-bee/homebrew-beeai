@@ -7,6 +7,14 @@ class Beeai < Formula
   sha256 "83ff2dddc3c7039dd699cce2513fbf839a5aedb396a50cb351985b44aa6f7f31"
   license "Apache-2.0"
 
+  bottle do
+    root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/beeai-0.0.8"
+    sha256 cellar: :any,                 arm64_sequoia: "6aa17042e8b00075ac06ba8cda6795f6a327d1c55988a04942c1c117bd49c62d"
+    sha256 cellar: :any,                 arm64_sonoma:  "2c89e0c7a500bdee12bfa27d3cc32d484aeb9b381f5502ad908be5030a33dedc"
+    sha256 cellar: :any,                 ventura:       "45e240f48539291398965528bd4d155a4046241f58d19c7ac78e3db368681758"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8e75c70f20c1ee61d5b82550ff860f3116d67466730028b9ba0b3abe38a4f5a"
+  end
+
   depends_on "rust" => :build
 
   depends_on "certifi"
