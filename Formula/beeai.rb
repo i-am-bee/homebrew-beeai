@@ -3,32 +3,28 @@ class Beeai < Formula
 
   desc "Command-line interface and server for the BeeAI platform"
   homepage "https://github.com/i-am-bee/beeai"
-  url "https://files.pythonhosted.org/packages/48/49/4be77c6b28115fe700f00ca36a0ecd5f276575799e4c20da0894ab31b562/beeai_cli-0.0.8.tar.gz"
-  sha256 "83ff2dddc3c7039dd699cce2513fbf839a5aedb396a50cb351985b44aa6f7f31"
-  license "Apache-2.0"
+  url "https://files.pythonhosted.org/packages/3c/fa/02b0f9be5a76fdbadbde24fcc0e02bc8e403267396e061d9ea0762684333/beeai_cli-0.0.9.tar.gz"
+  sha256 "19794b28b6400f92f44f3c3608ee1761bf54efa7a4c7de4d52e1a642fee26204"
 
-  bottle do
-    root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/beeai-0.0.8"
-    sha256 cellar: :any,                 arm64_sequoia: "6aa17042e8b00075ac06ba8cda6795f6a327d1c55988a04942c1c117bd49c62d"
-    sha256 cellar: :any,                 arm64_sonoma:  "2c89e0c7a500bdee12bfa27d3cc32d484aeb9b381f5502ad908be5030a33dedc"
-    sha256 cellar: :any,                 ventura:       "45e240f48539291398965528bd4d155a4046241f58d19c7ac78e3db368681758"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "a8e75c70f20c1ee61d5b82550ff860f3116d67466730028b9ba0b3abe38a4f5a"
-  end
+  license "Apache-2.0"
 
   depends_on "rust" => :build
 
   depends_on "certifi"
   depends_on "libyaml"
-  depends_on "node@22"
-  depends_on "otelcol-contrib"
+  depends_on "lima"
   depends_on "python-setuptools"
   depends_on "python@3.13"
   depends_on "readline"
-  depends_on "uv"
 
   resource "acp-sdk" do
-    url "https://files.pythonhosted.org/packages/c1/13/76af0e28cbfdace93a6eb17be49586ebb4937311bf981112a13bab9ad968/acp_sdk-0.0.5.tar.gz"
-    sha256 "d302c2d088373bf5c5b87ee62836045842e39946664346489a9c9dae5da08cc9"
+    url "https://files.pythonhosted.org/packages/95/6e/632b267d53fe1cb42119ad360958cced60c345a9cdefab99a4bfc4cbb442/acp_sdk-0.0.6.tar.gz"
+    sha256 "9958e869af5129fbb0bb55d0eb524936b9c6c740d90ca59a1d822f810f4aaf8d"
+  end
+
+  resource "aiodocker" do
+    url "https://files.pythonhosted.org/packages/f2/d7/30104dfac550ae6570d4dce24c2cbf2ddefd4937c9e861641314abfd8abb/aiodocker-0.24.0.tar.gz"
+    sha256 "661a6f9a479951f11f793031dcd5d55337e232c4ceaee69d51ceb885e5f16fac"
   end
 
   resource "aiohappyeyeballs" do
@@ -37,8 +33,8 @@ class Beeai < Formula
   end
 
   resource "aiohttp" do
-    url "https://files.pythonhosted.org/packages/6c/96/91e93ae5fd04d428c101cdbabce6c820d284d61d2614d00518f4fa52ea24/aiohttp-3.11.14.tar.gz"
-    sha256 "d6edc538c7480fa0a3b2bdd705f8010062d74700198da55d16498e1b49549b9c"
+    url "https://files.pythonhosted.org/packages/f1/d9/1c4721d143e14af753f2bf5e3b681883e1f24b592c0482df6fa6e33597fa/aiohttp-3.11.16.tar.gz"
+    sha256 "16f8a2c9538c14a557b4d309ed4d0a7c60f0253e8ed7b6c9a2859a7582f8b1b8"
   end
 
   resource "aiosignal" do
@@ -72,13 +68,13 @@ class Beeai < Formula
   end
 
   resource "beeai-sdk" do
-    url "https://files.pythonhosted.org/packages/8d/aa/8ac48aeac3c21b54c67eda3e4d5fec240b146d9812b3da30e835e43526d7/beeai_sdk-0.0.16.tar.gz"
-    sha256 "0a5582cf85d77118544990fd86e2a1c3175165e28791a2ea0c9b438078a0ebbd"
+    url "https://files.pythonhosted.org/packages/4b/a6/28458f2ce4c744cb3a50c8bfb0d56577c6a1955874b9b4fd1b33801a7b71/beeai_sdk-0.0.21.tar.gz"
+    sha256 "d16749508e7bbb8f87a1a83c4a6e136921a5863609cd5329f67c09535c0a60b9"
   end
 
   resource "beeai-server" do
-    url "https://files.pythonhosted.org/packages/01/4a/d04ff3f8d04dc9bd2e9d92d155ab4bcba66406ae4727f10eddc3b5d3a98e/beeai_server-0.0.7.tar.gz"
-    sha256 "7d6ce24f887c969872252be135353f3f467c2777c33c7290e6b8f2fd005c3856"
+    url "https://files.pythonhosted.org/packages/6a/10/4abda7f9970803494ae9068d905ce0bb349a7d8f7329b017fabc5c9b8bc5/beeai_server-0.0.8.tar.gz"
+    sha256 "0b791198033485fc64514338cc39239f5fb94c03d1310f29a649564af781236b"
   end
 
   resource "cachetools" do
@@ -112,13 +108,13 @@ class Beeai < Formula
   end
 
   resource "faker" do
-    url "https://files.pythonhosted.org/packages/ad/ab/031aa33d72420f074aceaa77e262476d30992db8b9b1bb2bf5dc9fcd8418/faker-37.0.1.tar.gz"
-    sha256 "3a71763f28d796c1d770b90e6b7519d75120a84b5dc4cdd27237870cc0451ff7"
+    url "https://files.pythonhosted.org/packages/ba/a6/b77f42021308ec8b134502343da882c0905d725a4d661c7adeaf7acaf515/faker-37.1.0.tar.gz"
+    sha256 "ad9dc66a3b84888b837ca729e85299a96b58fdaef0323ed0baace93c9614af06"
   end
 
   resource "fastapi" do
-    url "https://files.pythonhosted.org/packages/b5/28/c5d26e5860df807241909a961a37d45e10533acef95fc368066c7dd186cd/fastapi-0.115.11.tar.gz"
-    sha256 "cc81f03f688678b92600a65a5e618b93592c65005db37157147204d8924bf94f"
+    url "https://files.pythonhosted.org/packages/f4/55/ae499352d82338331ca1e28c7f4a63bfd09479b16395dce38cf50a39e2c2/fastapi-0.115.12.tar.gz"
+    sha256 "1e2c2a2646905f9e83d32f04a3f86aff4a286669c6c950ca95b5fd68c2602681"
   end
 
   resource "fastapi-cli" do
@@ -222,43 +218,43 @@ class Beeai < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/82/4a/7874ca44a1c9b23796c767dd94159f6c17e31c0e7d090552a1c623247d82/multidict-6.2.0.tar.gz"
-    sha256 "0085b0afb2446e57050140240a8595846ed64d1cbd26cef936bfab3192c673b8"
+    url "https://files.pythonhosted.org/packages/fa/2d/6e0d6771cadd5ad14d13193cc8326dc0b341cc1659c306cbfce7a5058fff/multidict-6.3.2.tar.gz"
+    sha256 "c1035eea471f759fa853dd6e76aaa1e389f93b3e1403093fa0fd3ab4db490678"
   end
 
   resource "opentelemetry-api" do
-    url "https://files.pythonhosted.org/packages/58/89/9d80fa1265a25306b5d9b2707ef09094a6dda9feeac2ee159d5a214f989c/opentelemetry_api-1.31.0.tar.gz"
-    sha256 "d8da59e83e8e3993b4726e4c1023cd46f57c4d5a73142e239247e7d814309de1"
+    url "https://files.pythonhosted.org/packages/8a/cf/db26ab9d748bf50d6edf524fb863aa4da616ba1ce46c57a7dff1112b73fb/opentelemetry_api-1.31.1.tar.gz"
+    sha256 "137ad4b64215f02b3000a0292e077641c8611aab636414632a9b9068593b7e91"
   end
 
   resource "opentelemetry-exporter-otlp-proto-common" do
-    url "https://files.pythonhosted.org/packages/de/a8/d9c27ba8c9b27fd776320d51942e33c4d6636bf8b109f16302b11b583053/opentelemetry_exporter_otlp_proto_common-1.31.0.tar.gz"
-    sha256 "e7fa0fe8cf2f87c190a59d820b6ba0821234178bc1227b5bd40ca057622d4ddc"
+    url "https://files.pythonhosted.org/packages/53/e5/48662d9821d28f05ab8350a9a986ab99d9c0e8b23f8ff391c8df82742a9c/opentelemetry_exporter_otlp_proto_common-1.31.1.tar.gz"
+    sha256 "c748e224c01f13073a2205397ba0e415dcd3be9a0f95101ba4aace5fc730e0da"
   end
 
   resource "opentelemetry-exporter-otlp-proto-http" do
-    url "https://files.pythonhosted.org/packages/3f/03/754b4fc0ae15d728dd69d65557c00b8dd559071ae9d8f7be19884387eb01/opentelemetry_exporter_otlp_proto_http-1.31.0.tar.gz"
-    sha256 "09cbe2f96a1996cae94a426fbc59cc2f5bbe9a246233f15832d295e750b407de"
+    url "https://files.pythonhosted.org/packages/6d/9c/d8718fce3d14042beab5a41c8e17be1864c48d2067be3a99a5652d2414a3/opentelemetry_exporter_otlp_proto_http-1.31.1.tar.gz"
+    sha256 "723bd90eb12cfb9ae24598641cb0c92ca5ba9f1762103902f6ffee3341ba048e"
   end
 
   resource "opentelemetry-proto" do
-    url "https://files.pythonhosted.org/packages/f1/c9/f24d878bfcd050fc2f5d5b52d59ed4878390c30406db3f164aa99c6c60cc/opentelemetry_proto-1.31.0.tar.gz"
-    sha256 "5efe313788a8f4b739a94beb207749587a449a5e90c68b0b6a931567e8ca721d"
+    url "https://files.pythonhosted.org/packages/5b/b0/e763f335b9b63482f1f31f46f9299c4d8388e91fc12737aa14fdb5d124ac/opentelemetry_proto-1.31.1.tar.gz"
+    sha256 "d93e9c2b444e63d1064fb50ae035bcb09e5822274f1683886970d2734208e790"
   end
 
   resource "opentelemetry-sdk" do
-    url "https://files.pythonhosted.org/packages/a8/cc/2f461097fa53e7db0e5aca8be93be94d658a551f047129a206c34cc19d8d/opentelemetry_sdk-1.31.0.tar.gz"
-    sha256 "452d7d5b3c1db2e5e4cb64abede0ddd20690cb244a559c73a59652fdf6726070"
+    url "https://files.pythonhosted.org/packages/63/d9/4fe159908a63661e9e635e66edc0d0d816ed20cebcce886132b19ae87761/opentelemetry_sdk-1.31.1.tar.gz"
+    sha256 "c95f61e74b60769f8ff01ec6ffd3d29684743404603df34b20aa16a49dc8d903"
   end
 
   resource "opentelemetry-semantic-conventions" do
-    url "https://files.pythonhosted.org/packages/b1/0b/923171ff87ac44064b47bb798ac983917799458b7a5475d0badbf3f1e929/opentelemetry_semantic_conventions-0.52b0.tar.gz"
-    sha256 "f8bc8873a69d0a2f45746c31980baad2bb10ccee16b1816497ccf99417770386"
+    url "https://files.pythonhosted.org/packages/06/8c/599f9f27cff097ec4d76fbe9fe6d1a74577ceec52efe1a999511e3c42ef5/opentelemetry_semantic_conventions-0.52b1.tar.gz"
+    sha256 "7b3d226ecf7523c27499758a58b542b48a0ac8d12be03c0488ff8ec60c5bae5d"
   end
 
   resource "orjson" do
-    url "https://files.pythonhosted.org/packages/ae/f9/5dea21763eeff8c1590076918a446ea3d6140743e0e36f58f369928ed0f4/orjson-3.10.15.tar.gz"
-    sha256 "05ca7fe452a2e9d8d9d706a2984c95b9c2ebc5db417ce0b7a49b91d50642a23e"
+    url "https://files.pythonhosted.org/packages/98/c7/03913cc4332174071950acf5b0735463e3f63760c80585ef369270c2b372/orjson-3.10.16.tar.gz"
+    sha256 "d2aaa5c495e11d17b9b93205f5fa196737ee3202f000aaebf028dc9a73750f10"
   end
 
   resource "packaging" do
@@ -277,13 +273,13 @@ class Beeai < Formula
   end
 
   resource "propcache" do
-    url "https://files.pythonhosted.org/packages/92/76/f941e63d55c0293ff7829dd21e7cf1147e90a526756869a9070f287a68c9/propcache-0.3.0.tar.gz"
-    sha256 "a8fd93de4e1d278046345f49e2238cdb298589325849b2645d4a94c53faeffc5"
+    url "https://files.pythonhosted.org/packages/07/c8/fdc6686a986feae3541ea23dcaa661bd93972d3940460646c6bb96e21c40/propcache-0.3.1.tar.gz"
+    sha256 "40d980c33765359098837527e18eddefc9a24cea5b45e078a7f3bb5b032c6ecf"
   end
 
   resource "protobuf" do
-    url "https://files.pythonhosted.org/packages/f7/d1/e0a911544ca9993e0f17ce6d3cc0932752356c1b0a834397f28e63479344/protobuf-5.29.3.tar.gz"
-    sha256 "5da0f41edaf117bde316404bad1a486cb4ededf8e4a54891296f648e8e076620"
+    url "https://files.pythonhosted.org/packages/17/7d/b9dca7365f0e2c4fa7c193ff795427cfa6290147e5185ab11ece280a18e7/protobuf-5.29.4.tar.gz"
+    sha256 "4f1dfcd7997b31ef8f53ec82781ff434a28bf71d9102ddde14d076adcfc78c99"
   end
 
   resource "psutil" do
@@ -292,13 +288,13 @@ class Beeai < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/b7/ae/d5220c5c52b158b1de7ca89fc5edb72f304a70a4c540c84c8844bf4008de/pydantic-2.10.6.tar.gz"
-    sha256 "ca5daa827cce33de7a42be142548b0096bf05a7e7b365aebfa5f8eeec7128236"
+    url "https://files.pythonhosted.org/packages/b0/41/832125a41fe098b58d1fdd04ae819b4dc6b34d6b09ed78304fd93d4bc051/pydantic-2.11.2.tar.gz"
+    sha256 "2138628e050bd7a1e70b91d4bf4a91167f4ad76fdb83209b107c8d84b854917e"
   end
 
   resource "pydantic-core" do
-    url "https://files.pythonhosted.org/packages/fc/01/f3e5ac5e7c25833db5eb555f7b7ab24cd6f8c322d3a3ad2d67a952dc0abc/pydantic_core-2.27.2.tar.gz"
-    sha256 "eb026e5a4c1fee05726072337ff51d1efb6f59090b7da90d30ea58625b1ffb39"
+    url "https://files.pythonhosted.org/packages/17/19/ed6a078a5287aea7922de6841ef4c06157931622c89c2a47940837b5eecd/pydantic_core-2.33.1.tar.gz"
+    sha256 "bcc9c6fdb0ced789245b02b7d6603e17d1563064ddcfc36f046b61c0c05dd9df"
   end
 
   resource "pydantic-settings" do
@@ -312,8 +308,8 @@ class Beeai < Formula
   end
 
   resource "python-dotenv" do
-    url "https://files.pythonhosted.org/packages/bc/57/e84d88dfe0aec03b7a2d4327012c1627ab5f03652216c63d49846d7a6c58/python-dotenv-1.0.1.tar.gz"
-    sha256 "e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca"
+    url "https://files.pythonhosted.org/packages/88/2c/7bb1416c5620485aa793f2de31d3df393d3686aa8a8506d11e10e13c5baf/python_dotenv-1.1.0.tar.gz"
+    sha256 "41f90bc6f5f177fb41f53e87666db362025010eb28f60a01c9143bfa33a2b2d5"
   end
 
   resource "python-multipart" do
@@ -337,18 +333,18 @@ class Beeai < Formula
   end
 
   resource "rich" do
-    url "https://files.pythonhosted.org/packages/ab/3a/0316b28d0761c6734d6bc14e770d85506c986c85ffb239e688eeaab2c2bc/rich-13.9.4.tar.gz"
-    sha256 "439594978a49a09530cff7ebc4b5c7103ef57baf48d5ea3184f21d9a2befa098"
+    url "https://files.pythonhosted.org/packages/a1/53/830aa4c3066a8ab0ae9a9955976fb770fe9c6102117c8ec4ab3ea62d89e8/rich-14.0.0.tar.gz"
+    sha256 "82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"
   end
 
   resource "rich-toolkit" do
-    url "https://files.pythonhosted.org/packages/5b/8a/71cfbf6bf6257ea785d1f030c22468f763eea1b3e5417620f2ba9abd6dca/rich_toolkit-0.13.2.tar.gz"
-    sha256 "fea92557530de7c28f121cbed572ad93d9e0ddc60c3ca643f1b831f2f56b95d3"
+    url "https://files.pythonhosted.org/packages/2e/ea/13945d58d556a28dfb0f774ad5c8af759527390e59505a40d164bf8ce1ce/rich_toolkit-0.14.1.tar.gz"
+    sha256 "9248e2d087bfc01f3e4c5c8987e05f7fa744d00dd22fa2be3aa6e50255790b3f"
   end
 
   resource "rpds-py" do
-    url "https://files.pythonhosted.org/packages/0a/79/2ce611b18c4fd83d9e3aecb5cba93e1917c050f556db39842889fa69b79f/rpds_py-0.23.1.tar.gz"
-    sha256 "7f3240dcfa14d198dba24b8b9cb3b108c06b68d45b7babd9eefc1038fdf7e707"
+    url "https://files.pythonhosted.org/packages/0b/b3/52b213298a0ba7097c7ea96bee95e1947aa84cc816d48cebb539770cdf41/rpds_py-0.24.0.tar.gz"
+    sha256 "772cc1b2cd963e7e17e6cc55fe0371fb9c704d63e44cacec7b9b7f523b78919e"
   end
 
   resource "rstr" do
@@ -386,19 +382,29 @@ class Beeai < Formula
     sha256 "d9f9776944207d1035b8b26072b9b140c63702fd7aa57c2f85d28ab701bd8e92"
   end
 
+  resource "tenacity" do
+    url "https://files.pythonhosted.org/packages/0a/d4/2b0cd0fe285e14b36db076e78c93766ff1d529d70408bd1d2a5a84f1d929/tenacity-9.1.2.tar.gz"
+    sha256 "1169d376c297e7de388d18b4481760d478b0e99a777cad3a9c86e556f4b697cb"
+  end
+
   resource "typer" do
     url "https://files.pythonhosted.org/packages/8b/6f/3991f0f1c7fcb2df31aef28e0594d8d54b05393a0e4e34c65e475c2a5d41/typer-0.15.2.tar.gz"
     sha256 "ab2fab47533a813c49fe1f16b1a370fd5819099c00b119e0633df65f22144ba5"
   end
 
   resource "typing-extensions" do
-    url "https://files.pythonhosted.org/packages/df/db/f35a00659bc03fec321ba8bce9420de607a1d37f8342eee1863174c69557/typing_extensions-4.12.2.tar.gz"
-    sha256 "1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8"
+    url "https://files.pythonhosted.org/packages/76/ad/cd3e3465232ec2416ae9b983f27b9e94dc8171d56ac99b345319a9475967/typing_extensions-4.13.1.tar.gz"
+    sha256 "98795af00fb9640edec5b8e31fc647597b4691f099ad75f469a2616be1a76dff"
+  end
+
+  resource "typing-inspection" do
+    url "https://files.pythonhosted.org/packages/82/5c/e6082df02e215b846b4b8c0b887a64d7d08ffaba30605502639d44c06b82/typing_inspection-0.4.0.tar.gz"
+    sha256 "9765c87de36671694a67904bf2c96e395be9c6439bb6c87b5142569dcdd65122"
   end
 
   resource "tzdata" do
-    url "https://files.pythonhosted.org/packages/43/0f/fa4723f22942480be4ca9527bbde8d43f6c3f2fe8412f00e7f5f6746bc8b/tzdata-2025.1.tar.gz"
-    sha256 "24894909e88cdb28bd1636c6887801df64cb485bd593f2fd83ef29075a81d694"
+    url "https://files.pythonhosted.org/packages/95/32/1a225d6164441be760d75c2c42e2780dc0873fe382da3e98a2e1e48361e5/tzdata-2025.2.tar.gz"
+    sha256 "b60a638fcc0daffadf82fe0f57e53d06bdec2f36c4df66280ae79bce6bd6f2b9"
   end
 
   resource "urllib3" do
@@ -456,11 +462,7 @@ class Beeai < Formula
     error_log_path var/"log/beeai-server.log"
     log_path var/"log/beeai-server.log"
     working_dir var
-    environment_variables PATH: [
-      Formula["node@22"].opt_bin,
-      Formula["uv"].opt_bin,
-      std_service_path_env,
-    ].join(":")
+    environment_variables PATH: std_service_path_env, FORCE_LIMA: 1
   end
 
   test do
