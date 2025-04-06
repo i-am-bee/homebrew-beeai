@@ -3,8 +3,8 @@ class Beeai < Formula
 
   desc "Command-line interface and server for the BeeAI platform"
   homepage "https://github.com/i-am-bee/beeai"
-  url "https://files.pythonhosted.org/packages/12/75/1fb3b0c9967cb5316d1827ffbd64694551ddba2a7b71618a87e49a90e69e/beeai_cli-0.0.10.tar.gz"
-  sha256 "28fe8f69f81d1752aa58c4934bbfe9862695fe99aa7e46c86d056a4baca2e12d"
+  url "https://files.pythonhosted.org/packages/aa/67/d473727aab6a1add2b73a32259fc18bb2da0e186f2c183429e5c36d380a7/beeai_cli-0.0.11.tar.gz"
+  sha256 "93246ab8a18129d40b9664b42a1b8212b835f9c262166066e317b3b50afe2a38"
 
   license "Apache-2.0"
 
@@ -81,13 +81,18 @@ class Beeai < Formula
   end
 
   resource "beeai-server" do
-    url "https://files.pythonhosted.org/packages/c7/06/58c8f21f78f4aa95d0f44aaf3d031dffcc4132f85884eb3c5a97a7687ead/beeai_server-0.0.10.tar.gz"
-    sha256 "8695582578f7ba6cf97abcf653a27abd03cefe00658883b37a7a69122084255a"
+    url "https://files.pythonhosted.org/packages/8b/4a/c404563e44047d12d328a3c413d98e033063e5435dab05e38c269f949496/beeai_server-0.0.11.tar.gz"
+    sha256 "f591687a9d40d46369ee96458a5cec9503b868b0a8073833a206a12ba2adc859"
   end
 
   resource "cachetools" do
     url "https://files.pythonhosted.org/packages/6c/81/3747dad6b14fa2cf53fcf10548cf5aea6913e96fab41a3c198676f8948a5/cachetools-5.5.2.tar.gz"
     sha256 "1a661caa9175d26759571b2e19580f9d6393969e5dfca11fdb1f947a23e640d4"
+  end
+
+  resource "certifi" do
+    url "https://files.pythonhosted.org/packages/1c/ab/c9f1e32b7b1bf505bf26f0ef697775960db7932abeb7b516de930ba2705f/certifi-2025.1.31.tar.gz"
+    sha256 "3d5da6925056f6f18f119200434a4780a94263f10d1c21d032a6f6b2baa20651"
   end
 
   resource "charset-normalizer" do
@@ -133,6 +138,11 @@ class Beeai < Formula
   resource "frozenlist" do
     url "https://files.pythonhosted.org/packages/8f/ed/0f4cec13a93c02c47ec32d81d11c0c1efbadf4a471e3f3ce7cad366cbbd3/frozenlist-1.5.0.tar.gz"
     sha256 "81d5af29e61b9c8348e876d442253723928dce6433e0e76cd925cd83f1b4b817"
+  end
+
+  resource "gnureadline" do
+    url "https://files.pythonhosted.org/packages/cb/92/20723aa239b9a8024e6f8358c789df8859ab1085a1ae106e5071727ad20f/gnureadline-8.2.13.tar.gz"
+    sha256 "c9b9e1e7ba99a80bb50c12027d6ce692574f77a65bf57bc97041cf81c0f49bd1"
   end
 
   resource "googleapis-common-protos" do
@@ -360,6 +370,11 @@ class Beeai < Formula
     sha256 "c4a564d4dfb4472d931d145c43d1cf1ad78c24592142e7755b8866179eeac012"
   end
 
+  resource "setuptools" do
+    url "https://files.pythonhosted.org/packages/92/ec/089608b791d210aec4e7f97488e67ab0d33add3efccb83a056cbafe3a2a6/setuptools-75.8.0.tar.gz"
+    sha256 "c5afc8f407c626b8313a86e10311dd3f661c6cd9c09d4bf8c15c0e11f9f2b0e6"
+  end
+
   resource "shellingham" do
     url "https://files.pythonhosted.org/packages/58/15/8b3609fd3830ef7b27b655beb4b4e9c62313a4e8da8c676e142cc210d58e/shellingham-1.5.4.tar.gz"
     sha256 "8dbca0739d487e5bd35ab3ca4b36e11c4078f3a234bfce294b0a0291363404de"
@@ -451,8 +466,8 @@ class Beeai < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/b7/9d/4b94a8e6d2b51b599516a5cb88e5bc99b4d8d4583e468057eaa29d5f0918/yarl-1.18.3.tar.gz"
-    sha256 "ac1801c45cbf77b6c99242eeff4fffb5e4e73a800b5c4ad4fc0be5def634d2e1"
+    url "https://files.pythonhosted.org/packages/fc/4d/8a8f57caccce49573e567744926f88c6ab3ca0b47a257806d1cf88584c5f/yarl-1.19.0.tar.gz"
+    sha256 "01e02bb80ae0dbed44273c304095295106e1d9470460e773268a27d11e594892"
   end
 
   resource "zipp" do
