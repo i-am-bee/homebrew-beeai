@@ -3,8 +3,8 @@ class Beeai < Formula
 
   desc "Command-line interface and server for the BeeAI platform"
   homepage "https://github.com/i-am-bee/beeai"
-  url "https://files.pythonhosted.org/packages/12/75/1fb3b0c9967cb5316d1827ffbd64694551ddba2a7b71618a87e49a90e69e/beeai_cli-0.0.10.tar.gz"
-  sha256 "28fe8f69f81d1752aa58c4934bbfe9862695fe99aa7e46c86d056a4baca2e12d"
+  url "https://files.pythonhosted.org/packages/aa/67/d473727aab6a1add2b73a32259fc18bb2da0e186f2c183429e5c36d380a7/beeai_cli-0.0.11.tar.gz"
+  sha256 "93246ab8a18129d40b9664b42a1b8212b835f9c262166066e317b3b50afe2a38"
 
   license "Apache-2.0"
 
@@ -81,8 +81,8 @@ class Beeai < Formula
   end
 
   resource "beeai-server" do
-    url "https://files.pythonhosted.org/packages/c7/06/58c8f21f78f4aa95d0f44aaf3d031dffcc4132f85884eb3c5a97a7687ead/beeai_server-0.0.10.tar.gz"
-    sha256 "8695582578f7ba6cf97abcf653a27abd03cefe00658883b37a7a69122084255a"
+    url "https://files.pythonhosted.org/packages/8b/4a/c404563e44047d12d328a3c413d98e033063e5435dab05e38c269f949496/beeai_server-0.0.11.tar.gz"
+    sha256 "f591687a9d40d46369ee96458a5cec9503b868b0a8073833a206a12ba2adc859"
   end
 
   resource "cachetools" do
@@ -451,8 +451,8 @@ class Beeai < Formula
   end
 
   resource "yarl" do
-    url "https://files.pythonhosted.org/packages/b7/9d/4b94a8e6d2b51b599516a5cb88e5bc99b4d8d4583e468057eaa29d5f0918/yarl-1.18.3.tar.gz"
-    sha256 "ac1801c45cbf77b6c99242eeff4fffb5e4e73a800b5c4ad4fc0be5def634d2e1"
+    url "https://files.pythonhosted.org/packages/fc/4d/8a8f57caccce49573e567744926f88c6ab3ca0b47a257806d1cf88584c5f/yarl-1.19.0.tar.gz"
+    sha256 "01e02bb80ae0dbed44273c304095295106e1d9470460e773268a27d11e594892"
   end
 
   resource "zipp" do
