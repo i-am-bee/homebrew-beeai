@@ -29,6 +29,13 @@ jobs:
         run: |
           git rebase --exec "git commit --amend --no-edit -m \"\$(git show -s --format='%B%nSigned-off-by: %cn <%ce>')\"" origin/main
 
+      - name: Pre-push commits to pass DCO checks
+        env:
+          BRANCH: ${{ github.event.pull_request.head.ref }}
+        run: |
+          git branch --copy main "$BRANCH--pre-push"
+          git push origin "$BRANCH--pre-push"
+
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
         with:
@@ -39,4 +46,6 @@ jobs:
         if: github.event.pull_request.head.repo.fork == false
         env:
           BRANCH: ${{ github.event.pull_request.head.ref }}
-        run: git push --delete origin "$BRANCH"
+        run: |
+          git push --delete origin "$BRANCH"
+          git push --delete origin "$BRANCH--pre-push"
