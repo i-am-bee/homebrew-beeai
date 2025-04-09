@@ -3,8 +3,8 @@ class Beeai < Formula
 
   desc "Command-line interface and server for the BeeAI platform"
   homepage "https://github.com/i-am-bee/beeai"
-  url "https://files.pythonhosted.org/packages/aa/67/d473727aab6a1add2b73a32259fc18bb2da0e186f2c183429e5c36d380a7/beeai_cli-0.0.11.tar.gz"
-  sha256 "93246ab8a18129d40b9664b42a1b8212b835f9c262166066e317b3b50afe2a38"
+  url "https://files.pythonhosted.org/packages/51/d1/9d008cf6cd9cf02c91ded78ea5418f80085e5a19af699a3b7f528f78a924/beeai_cli-0.0.12.tar.gz"
+  sha256 "3140855a92ad0b3346fd80d281e3f861457b9d1f56c5b044931a5285ea520bf7"
 
   license "Apache-2.0"
 
@@ -81,8 +81,8 @@ class Beeai < Formula
   end
 
   resource "beeai-server" do
-    url "https://files.pythonhosted.org/packages/8b/4a/c404563e44047d12d328a3c413d98e033063e5435dab05e38c269f949496/beeai_server-0.0.11.tar.gz"
-    sha256 "f591687a9d40d46369ee96458a5cec9503b868b0a8073833a206a12ba2adc859"
+    url "https://files.pythonhosted.org/packages/89/48/5b27a7815dff9ed76dfbe2675355bd9c9a346b13ce7e59a77873d856e9c9/beeai_server-0.0.12.tar.gz"
+    sha256 "45f3196afaeafd50863bfed150b82113b356558aa8e2b2804b6e5c0d3bf3aff2"
   end
 
   resource "cachetools" do
@@ -226,8 +226,8 @@ class Beeai < Formula
   end
 
   resource "multidict" do
-    url "https://files.pythonhosted.org/packages/fa/2d/6e0d6771cadd5ad14d13193cc8326dc0b341cc1659c306cbfce7a5058fff/multidict-6.3.2.tar.gz"
-    sha256 "c1035eea471f759fa853dd6e76aaa1e389f93b3e1403093fa0fd3ab4db490678"
+    url "https://files.pythonhosted.org/packages/82/4a/7874ca44a1c9b23796c767dd94159f6c17e31c0e7d090552a1c623247d82/multidict-6.2.0.tar.gz"
+    sha256 "0085b0afb2446e57050140240a8595846ed64d1cbd26cef936bfab3192c673b8"
   end
 
   resource "opentelemetry-api" do
@@ -296,8 +296,8 @@ class Beeai < Formula
   end
 
   resource "pydantic" do
-    url "https://files.pythonhosted.org/packages/b0/41/832125a41fe098b58d1fdd04ae819b4dc6b34d6b09ed78304fd93d4bc051/pydantic-2.11.2.tar.gz"
-    sha256 "2138628e050bd7a1e70b91d4bf4a91167f4ad76fdb83209b107c8d84b854917e"
+    url "https://files.pythonhosted.org/packages/10/2e/ca897f093ee6c5f3b0bee123ee4465c50e75431c3d5b6a3b44a47134e891/pydantic-2.11.3.tar.gz"
+    sha256 "7471657138c16adad9322fe3070c0116dd6c3ad8d649300e3cbdfe91f4db4ec3"
   end
 
   resource "pydantic-core" do
@@ -431,8 +431,8 @@ class Beeai < Formula
   end
 
   resource "watchfiles" do
-    url "https://files.pythonhosted.org/packages/f5/26/c705fc77d0a9ecdb9b66f1e2976d95b81df3cae518967431e7dbf9b5e219/watchfiles-1.0.4.tar.gz"
-    sha256 "6ba473efd11062d73e4f00c2b730255f9c1bdd73cd5f9fe5b5da8dbd4a717205"
+    url "https://files.pythonhosted.org/packages/03/e2/8ed598c42057de7aa5d97c472254af4906ff0a59a66699d426fc9ef795d7/watchfiles-1.0.5.tar.gz"
+    sha256 "b7529b5dcc114679d43827d8c35a07c493ad6f083633d573d81c660abc5979e9"
   end
 
   resource "wcwidth" do
