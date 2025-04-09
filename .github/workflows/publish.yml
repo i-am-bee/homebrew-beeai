@@ -24,6 +24,10 @@ jobs:
           HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
           PULL_REQUEST: ${{ github.event.pull_request.number }}
         run: brew pr-pull --debug --tap="$GITHUB_REPOSITORY" "$PULL_REQUEST"
+      
+      - name: Add Signed-off-by lines
+        run: |
+          git rebase --exec "git commit --amend --no-edit -m \"\$(git show -s --format='%B%nSigned-off-by: %cn <%ce>')\"" origin/main
 
       - name: Push commits
         uses: Homebrew/actions/git-try-push@master
