@@ -5,9 +5,8 @@ class Beeai < Formula
   homepage "https://github.com/i-am-bee/beeai"
   url "https://files.pythonhosted.org/packages/51/d1/9d008cf6cd9cf02c91ded78ea5418f80085e5a19af699a3b7f528f78a924/beeai_cli-0.0.12.tar.gz"
   sha256 "3140855a92ad0b3346fd80d281e3f861457b9d1f56c5b044931a5285ea520bf7"
-  head "https://github.com/i-am-bee/beeai.git", branch: "main"
-
   license "Apache-2.0"
+  head "https://github.com/i-am-bee/beeai.git", branch: "main"
 
   bottle do
     root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/beeai-0.0.11"
@@ -467,7 +466,8 @@ class Beeai < Formula
       ENV.prepend_create_path "PATH", Formula["mise"].opt_bin
       system "mise", "trust"
       system "mise", "install"
-      system "mise", "run", "beeai-cli:build", ":::", "beeai-server:build", ":::", "beeai-sdk:build:py", ":::", "acp-python-sdk:build"
+      system "mise", "run", "beeai-cli:build", ":::", "beeai-server:build", ":::", "beeai-sdk:build:py", ":::",
+"acp-python-sdk:build"
       venv = virtualenv_create(libexec, "python3.13")
       %w[
         packages/acp-python-sdk/dist/acp_sdk-*.tar.gz
@@ -477,8 +477,10 @@ class Beeai < Formula
       ].each do |pkg_glob|
         venv.pip_install Pathname.glob(pkg_glob).first
       end
+      already_installed = %w[beeai-cli beeai-server beeai-sdk acp-sdk]
       resources.each do |r|
-        next if %w[beeai-cli beeai-server beeai-sdk acp-sdk].include?(r.name)
+        next if already_installed.include?(r.name)
+
         venv.pip_install resource(r.name)
       end
       bin.install_symlink libexec/"bin/beeai"
