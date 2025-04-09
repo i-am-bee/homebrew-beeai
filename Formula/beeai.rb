@@ -5,6 +5,7 @@ class Beeai < Formula
   homepage "https://github.com/i-am-bee/beeai"
   url "https://files.pythonhosted.org/packages/51/d1/9d008cf6cd9cf02c91ded78ea5418f80085e5a19af699a3b7f528f78a924/beeai_cli-0.0.12.tar.gz"
   sha256 "3140855a92ad0b3346fd80d281e3f861457b9d1f56c5b044931a5285ea520bf7"
+  head "https://github.com/i-am-bee/beeai.git", branch: "main"
 
   license "Apache-2.0"
 
@@ -16,6 +17,7 @@ class Beeai < Formula
     sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a09f1d640f9c8890d048d6350d30854c7b8dba5c158a49aa55a62a32ed41279"
   end
 
+  depends_on "mise" => :build
   depends_on "rust" => :build
 
   depends_on "certifi"
@@ -461,7 +463,28 @@ class Beeai < Formula
   end
 
   def install
-    virtualenv_install_with_resources
+    if build.head?
+      ENV.prepend_create_path "PATH", Formula["mise"].opt_bin
+      system "mise", "trust"
+      system "mise", "install"
+      system "mise", "run", "beeai-cli:build", ":::", "beeai-server:build", ":::", "beeai-sdk:build:py", ":::", "acp-python-sdk:build"
+      venv = virtualenv_create(libexec, "python3.13")
+      %w[
+        packages/acp-python-sdk/dist/acp_sdk-*.tar.gz
+        packages/beeai-sdk/dist-py/beeai_sdk-*.tar.gz
+        apps/beeai-server/dist/beeai_server-*.tar.gz
+        apps/beeai-cli/dist/beeai_cli-*.tar.gz
+      ].each do |pkg_glob|
+        venv.pip_install Pathname.glob(pkg_glob).first
+      end
+      resources.each do |r|
+        next if %w[beeai-cli beeai-server beeai-sdk acp-sdk].include?(r.name)
+        venv.pip_install resource(r.name)
+      end
+      bin.install_symlink libexec/"bin/beeai"
+    else
+      virtualenv_install_with_resources
+    end
   end
 
   service do
