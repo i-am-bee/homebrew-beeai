@@ -9,11 +9,11 @@ class Beeai < Formula
   head "https://github.com/i-am-bee/beeai.git", branch: "main"
 
   bottle do
-    root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/beeai-0.0.11"
-    sha256 cellar: :any,                 arm64_sequoia: "448ff77daad84ab5f4f160bd7d8dce55a00fd049cd5623116387502cd638b5a5"
-    sha256 cellar: :any,                 arm64_sonoma:  "adbef6362fdcae9aa967e1990f5066c1e294893663310e0d21b5d677b5cd4a0f"
-    sha256 cellar: :any,                 ventura:       "9f741d8edd1c5ac868c73d117a49fcd82d6ebfbf2d968ac92c6f7f674210e0b1"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:  "5a09f1d640f9c8890d048d6350d30854c7b8dba5c158a49aa55a62a32ed41279"
+    root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/beeai-0.0.12"
+    sha256 cellar: :any,                 arm64_sequoia: "af2777f302544fef77844ad6a31fd4ff31e5002fc10c1d15e2dd1653fdb3f9df"
+    sha256 cellar: :any,                 arm64_sonoma:  "f844a24f19c7c9b96861f135f2cf7fe69d3f2eabb860a3b20607412c9b28821c"
+    sha256 cellar: :any,                 ventura:       "642f1d1ba8f7a1147e1c19f34bebd094a1240118eef38767a4f8c65de5f40c62"
+    sha256 cellar: :any_skip_relocation, x86_64_linux:  "8eca2f30abfeeb16aeda714bfcf33eb2335def967ba9bd58d405581d98194987"
   end
 
   depends_on "mise" => :build
