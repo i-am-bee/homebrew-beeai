@@ -32,8 +32,10 @@ jobs:
       - name: Pre-push commits to pass DCO checks
         env:
           BRANCH: ${{ github.event.pull_request.head.ref }}
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           git branch --copy main "$BRANCH--pre-push"
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
           git push origin "$BRANCH--pre-push"
 
       - name: Push commits
