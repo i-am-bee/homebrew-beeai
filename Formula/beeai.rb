@@ -3,8 +3,8 @@ class Beeai < Formula
 
   desc "Command-line interface and server for the BeeAI platform"
   homepage "https://github.com/i-am-bee/beeai"
-  url "https://files.pythonhosted.org/packages/11/4d/c0b4cf32d814587c1efdcae6168e14d3b45120772e1e4d36dfb3bc2dfc8e/beeai_cli-0.1.2.tar.gz"
-  sha256 "96f210b5dfac044d647196be6f33ed489dadcdb5d69f54a1fbf29a1b1ac54ea4"
+  url "https://files.pythonhosted.org/packages/fb/81/4fc1caf4c390304e9a7e01a09805342be9401c72054416caa556e0ef3df1/beeai_cli-0.1.3.tar.gz"
+  sha256 "b88900e33f78ceb440f84f02f7bbb26714dd2df509f110b83a0f26ff183ddc53"
   license "Apache-2.0"
   head "https://github.com/i-am-bee/beeai.git", branch: "main"
 
@@ -27,8 +27,8 @@ class Beeai < Formula
   depends_on "readline"
 
   resource "acp-sdk" do
-    url "https://files.pythonhosted.org/packages/94/30/128111d0e4a18b0c40a82df6f6140d1ab8fb0866e8adcd2d74aa1c14895a/acp_sdk-0.8.1.tar.gz"
-    sha256 "abfe6ed8acd839c24b35a163f5c6fbe85558f235b8cc9dbb10369ff190908329"
+    url "https://files.pythonhosted.org/packages/98/d6/a524eb23c0e856f04480e698916ac40d5c57c24947b40904ab6b316a59db/acp_sdk-0.8.3.tar.gz"
+    sha256 "323af982027616f51f2722808aca42431d37ab7204639a9d2bbaa1cc1205bbdb"
   end
 
   resource "aiodocker" do
@@ -77,8 +77,8 @@ class Beeai < Formula
   end
 
   resource "beeai-server" do
-    url "https://files.pythonhosted.org/packages/8a/26/5bcaa2e182e3d6f14ffa20244543d14026c0e56b36205c6f9a0e5760a1d5/beeai_server-0.1.1.tar.gz"
-    sha256 "b0301fab75d66a882db6ed475415d6e5a5a0599e7e35b3ace2b97bd619b733d8"
+    url "https://files.pythonhosted.org/packages/98/b3/ef5df4d4b215c8efe9027abdc0099c97378d4f96cd23263cf5bee10353cf/beeai_server-0.1.3.tar.gz"
+    sha256 "911364ed68c69f4c5c3dcdc71e36f988f0f3dcb9b7911de23d51e4dcfbff9b39"
   end
 
   resource "cachetools" do
