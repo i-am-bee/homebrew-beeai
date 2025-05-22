@@ -8,6 +8,7 @@ class Beeai < Formula
   license "Apache-2.0"
   head "https://github.com/i-am-bee/beeai.git", branch: "main"
 
+  depends_on "lima"
   depends_on "python@3.13"
 
   def install
