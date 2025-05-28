@@ -8,6 +8,13 @@ class Beeai < Formula
   license "Apache-2.0"
   head "https://github.com/i-am-bee/beeai.git", branch: "main"
 
+  bottle do
+    root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/beeai-0.2.0"
+    sha256 arm64_sequoia: "1af0c7c4e99cab5e29609c050ce7aeae961c5920e060255dcfc5098df3fb58f1"
+    sha256 arm64_sonoma:  "f0403c3dfe07da6c9de38dc22ffa337ad83d2df41bf2946f68cb9d31b734cf96"
+    sha256 ventura:       "d936c838219b22db4826bd9d17aa981b94529554f54fcf873b190320f4eb5f27"
+  end
+
   depends_on "lima"
   depends_on "python@3.13"
 
