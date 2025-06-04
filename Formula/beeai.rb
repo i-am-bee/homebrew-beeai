@@ -3,16 +3,10 @@ class Beeai < Formula
 
   desc "Command-line interface and server for the BeeAI platform"
   homepage "https://github.com/i-am-bee/beeai"
-  url "https://files.pythonhosted.org/packages/00/44/5eb966ad88e461240e6f297c6627a3ad43ae339ad884f60bcf4b1fe0dbae/beeai_cli-0.2.1.tar.gz"
-  sha256 "bc596feb89206a99ddd54b06809c08019d90080a7a1d0510f6a0c2ac8d7f2beb"
+  url "https://files.pythonhosted.org/packages/5b/3b/9e4fe2a5aff90001d83a6f7115ddf69b6ff88047969200c8883e2c3eec6e/beeai_cli-0.2.3.tar.gz"
+  sha256 "f0c73b8ca0945dc2337b613660f48a1d91051a6bd414fedb04f2dd7d0365988e"
   license "Apache-2.0"
   head "https://github.com/i-am-bee/beeai.git", branch: "main"
-
-  bottle do
-    root_url "https://github.com/i-am-bee/homebrew-beeai/releases/download/beeai-0.2.1"
-    sha256 arm64_sequoia: "d02ef3a6330fe915556a8d5378cfeeb0ccb26747fe9efc3c61d0c2ddd3cb1b58"
-    sha256 ventura:       "3c7e77571383420edf1e31d9a3db7ad77362cb55a687e32a705fef1369bbfffc"
-  end
 
   depends_on "lima"
   depends_on "python@3.13"
