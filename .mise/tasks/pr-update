@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+#MISE tools.jq = "latest"
+#MISE tools.gh = "latest"
+set -euo pipefail
+
+PACKAGE="beeai-cli"
+FORMULA="Formula/beeai.rb"
+
+test "$(git rev-parse --abbrev-ref HEAD)" != "main" && echo "ERROR: You must be on the 'main' branch." && exit 1
+test -n "$(git status --porcelain)" && echo "ERROR: Working directory not clean. Commit or stash changes first." && exit 1
+
+JSON=$(curl -s "https://pypi.org/pypi/$PACKAGE/json")
+URL=$(echo "$JSON" | jq -r '.urls[] | select(.packagetype == "sdist" and (.filename? // "" | endswith(".tar.gz"))) | .url')
+SHA256=$(echo "$JSON" | jq -r '.urls[] | select(.packagetype == "sdist" and (.filename? // "" | endswith(".tar.gz"))) | .digests.sha256')
+VERSION=$(basename "$URL" | sed -E 's/^beeai_cli-([0-9.]+)\.tar\.gz$/\1/')
+
+CURRENT_VERSION=$(grep -E '^  url ".*/beeai_cli-[^"]+\.tar\.gz"' "$FORMULA" | sed -E 's|.*beeai_cli-([0-9.]+)\.tar\.gz.*|\1|')
+test "$CURRENT_VERSION" == "$VERSION" && echo "Formula is already up to date (version $VERSION)." && exit 1
+
+perl -i -pe "s|^  url \".*\"|  url \"$URL\"|" "$FORMULA"
+perl -i -pe "s|^  sha256 \".*\"|  sha256 \"$SHA256\"|" "$FORMULA"
+perl -i -0pe 's/^  bottle do\n.*?\n  end\n\n?//sm' "$FORMULA"
+
+git checkout -b "chore-beeai-update-to-${VERSION}"
+git add "$FORMULA"
+git commit -m "chore(beeai): update to ${VERSION}"
+git push origin "chore-beeai-update-to-${VERSION}"
+gh pr create --fill --web
