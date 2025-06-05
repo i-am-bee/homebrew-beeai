@@ -1,9 +1,22 @@
-# Contributing
+# Contributing (for developers of this tap)
 
-## Updating this tap (for developers)
+## Updating `beeai` version
 
-First ensure that you have the tap added with `brew tap i-am-bee/beeai`. Then update formulae with:
+Pre-requisites: `brew`, `git`, `mise`.
 
-### `beeai`
+1. Publish `beeai-cli` to PyPI (see main repo)
+2.
+```bash
+# tap the tap
+brew tap i-am-bee/beeai
 
-First, make sure that `beeai-cli` and its dependencies are released to PyPI. Then copy the latest release URL and hash from PyPI interface into the formula and create a new PR. **⚠️ Do not merge the PR** -- instead, tag the PR with `pr-pull`, and the Action will automatically merge it, ensuring that the correct bottles are referenced.
+# cd into the repo
+cd $(brew --repo i-am-bee/beeai)
+
+# optional: change Git URL to SSH (it will be HTTP by default)
+git remote set-url origin git@github.com:i-am-bee/homebrew-beeai.git
+
+# create a PR using GitHub CLI
+mise pr-update
+```
+3. **⚠️ Do not merge the PR** -- instead, tag the PR with `pr-pull`, and the Action will automatically merge it, ensuring that the correct bottles are referenced.
