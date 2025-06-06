@@ -23,6 +23,6 @@ perl -i -0pe 's/^  bottle do\n.*?\n  end\n\n?//sm' "$FORMULA"
 
 git checkout -b "chore-beeai-update-to-${VERSION}"
 git add "$FORMULA"
-git commit -m "chore(beeai): update to ${VERSION}"
+git commit --signoff -m "chore(beeai): update to ${VERSION}"
 git push origin "chore-beeai-update-to-${VERSION}"
 gh pr create --fill --web
