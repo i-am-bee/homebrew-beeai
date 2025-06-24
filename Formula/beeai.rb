@@ -15,7 +15,7 @@ class Beeai < Formula
     sha256 cellar: :any, ventura:       "2662081a8a07b0c7b71c1e127b27c3dc44c195d3a808a7c31b440d3d82b5a850"
   end
 
-  deprecate! date: "2025-06-24", because: "migrated to uv -- please uninstall this formula and install the new version according to https://docs.beeai.dev/introduction/installation"
+  disable! date: "2025-06-23", because: "migrated to uv -- please uninstall this formula and install the new version according to https://docs.beeai.dev/introduction/installation"
 
   depends_on "lima"
   depends_on "python@3.13"
